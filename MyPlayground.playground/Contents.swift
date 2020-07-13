@@ -1,14 +1,12 @@
 import UIKit
 
-let pointA: Int = 90
-var pointB: Int = 80
-pointB = 90
+let pointA: String = "Test"
+var pointB: String = "test"
 
-if pointA > pointB {
-    print("AがBより大きい")
-} else if pointB > pointA {
-    print("BがAより大きい")
+if pointA.contains(pointB) {
+    print("1")
+} else if pointA.lowercased().contains(pointB){
+    print("2")
 } else if pointA == pointB {
-    print("AとBが同じ")
+    print("3")
 }
-
