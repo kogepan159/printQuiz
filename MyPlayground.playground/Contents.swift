@@ -1,10 +1,10 @@
 import UIKit
 
-var pointA: Int = 25
-var pointB: Int = 5
+var pointA: String = "1"
+var pointB: String = "2,23"
 
 pointA = pointA + pointB
-pointB = pointA - pointB
-pointA = (pointA - pointB) * 5
+pointB = String("2,23".split(separator: ",").first!)
+pointA = pointA + pointB
 
-print(pointA%pointB)
+print(pointA.split(separator: ",").last!)
