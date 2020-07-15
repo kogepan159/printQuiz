@@ -1,12 +1,10 @@
 import UIKit
 
-let pointA: String = "Test"
-var pointB: String = "test"
+var pointA: Int = 25
+var pointB: Int = 5
 
-if pointA.contains(pointB) {
-    print("1")
-} else if pointA.lowercased().contains(pointB){
-    print("2")
-} else if pointA == pointB {
-    print("3")
-}
+pointA = pointA + pointB
+pointB = pointA - pointB
+pointA = (pointA - pointB) * 5
+
+print(pointA%pointB)
