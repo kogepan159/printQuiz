@@ -1,10 +1,10 @@
 import UIKit
 
-var pointA: String = "1"
-var pointB: String = "2,23"
+var pointA: Array = ["1", "3", "5"]
+var pointB: Array = ["2", "4"]
 
 pointA = pointA + pointB
-pointB = String("2,23".split(separator: ",").first!)
 pointA = pointA + pointB
+pointA.append("123")
 
-print(pointA.split(separator: ",").last!)
+print(pointA.count)
