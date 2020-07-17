@@ -1,13 +1,12 @@
-// 9日目
-// 8日目の正解は「8」でした
+// 10日目 Enum編
+// 9日目の正解は「nil」でした
 import UIKit
 
-var pointA: Dictionary = ["id": 0,
-                          "name": "kogepan",
-                          "kana": "コゲパン"] as [String : Any]
-pointA["id"] = 10
-pointA["idB"] = 20
-pointA.removeValue(forKey: "kana")
+enum Weather: String {
+    case sunny = "sunny"
+    case cloudy = "cloudy"
+    case rainy = "rainy"
+}
 
-print(pointA.count)//3
-print(pointA["kana"])//← 今日の問題
+print(Weather.cloudy.rawValue)//cloudy
+print(Weather.sunny.rawValue)//← 今日の問題
