@@ -1,10 +1,13 @@
+// 9日目
+// 8日目の正解は「8」でした
 import UIKit
 
-var pointA: Array = ["1", "3", "5"]
-var pointB: Array = ["2", "4"]
+var pointA: Dictionary = ["id": 0,
+                          "name": "kogepan",
+                          "kana": "コゲパン"] as [String : Any]
+pointA["id"] = 10
+pointA["idB"] = 20
+pointA.removeValue(forKey: "kana")
 
-pointA = pointA + pointB
-pointA = pointA + pointB
-pointA.append("123")
-
-print(pointA.count)
+print(pointA.count)//3
+print(pointA["kana"])//← 今日の問題
