@@ -1,5 +1,5 @@
-// 15日目 if let編
-// 14日目の正解は「String型について」でした
+// 16日目 guard編
+// 15日目の正解は「test:  111」でした
 import UIKit
 
 let text: String? = "111"
