@@ -1,15 +1,9 @@
-// 11日目 switch編
-// 10日目の正解は「sunny」でした
+// 12日目 for in編
+// 11日目の正解は「何もしない」でした
 import UIKit
 
-let baseball = ""
-switch baseball {
-case "打つ":
-    print("ヒット！")
-case "投げる":
-    print("いいストレート！")
-case "掴む","キャッチ":
-    print("いいミット音")
-default:
-    print("何もしない")
+var point: Int = 0
+for num in 0...10 {
+    point = point + 1
 }
+print(point)
