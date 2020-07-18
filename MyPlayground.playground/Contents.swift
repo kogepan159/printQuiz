@@ -1,14 +1,13 @@
-// 14日目 Optional編(?,!について)
-// 13日目の正解は「あかさたな」でした
+// 15日目 if let編
+// 14日目の正解は「String型について」でした
 import UIKit
 
-let text: String? = nil
-let text2: String! = "String型について"
-var setText: String = ""
+let text: String? = "111"
+let text2: String? = nil
 
-// setText = text ← String型にnilを入れようとするとErrorになる
-setText = text ?? "" //nilだった場合に空文字を入れる
-
-setText = text2 // String型にString型を入れるのでOK
-print(setText)
+if let ifletText: String = text {
+    print("test: ", ifletText)
+} else if let ifletText2: String = text2 {
+    print("test2: ", ifletText2)
+}
 
