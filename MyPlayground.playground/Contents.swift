@@ -1,25 +1,16 @@
-// 16日目 guard編
-// 15日目の正解は「test:  111」でした
+// 17日目 二重for編
+// 16日目の正解は「guardText2 nil」でした
 import UIKit
 
-let text: String? = "aaa"
-let text2: String? = nil
+var count = 0
 
-class GuardTest {
-    static func nilCheck() {
-        guard let guardText: String = text else  {
-            print("guardText nil")
-            return
-        }
-        guard let guardText2: String = text2 else {
-            print("guardText2 nil")
-            return
-        }
-        print("OK nil チェック")
+for _ in 0...4 {
+    for _ in 0...5 {
+        count = count + 1
     }
 }
 
-GuardTest.nilCheck()
+print(count)
 
 
 
