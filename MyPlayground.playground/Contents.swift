@@ -1,20 +1,25 @@
-// 21日目 class編
-// 20日目の正解は「2」でした
+// 21日目 引数
+// 20日目の正解は「ワン」でした
 import UIKit
 
 class Dog : NSObject {
     var name: String = ""
     
-    func Naku() {
-        print("ワン")
+    func uniqueName(ownerName: String,dogName: String) {
+        self.name = ownerName + " " + dogName
     }
-    
-    func Ote() {
-        print("お手")
-    }
+
 }
 let dog:Dog = Dog()
-dog.name = "ポーチ"
-dog.Naku()
+dog.uniqueName(ownerName: "こげぱん", dogName: "ココア")
+print(dog.name)
 
+
+//func Naku() {
+//    print("ワン")
+//}
+//
+//func Ote() {
+//    print("お手")
+//}
 
