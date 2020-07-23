@@ -1,16 +1,20 @@
-// 19日目 break編
-// 18日目の正解は「[2, 4]」でした
+// 21日目 class編
+// 20日目の正解は「2」でした
 import UIKit
 
-var count = 0
-for _ in 0...4 {
-    for _ in 0...5 {
-        count = count + 1
-        break
+class Dog : NSObject {
+    var name: String = ""
+    
+    func Naku() {
+        print("ワン")
+    }
+    
+    func Ote() {
+        print("お手")
     }
 }
-
-print(count)
-
+let dog:Dog = Dog()
+dog.name = "ポーチ"
+dog.Naku()
 
 
