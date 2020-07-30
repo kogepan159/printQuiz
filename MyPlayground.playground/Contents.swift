@@ -1,27 +1,35 @@
-// 23日目 return
-// 22日目の正解は「こげぱん ココア」でした
+// 24日目 private/public
+// 23日目の正解は「こげぱん」でした
 import UIKit
 
 class Dog : NSObject {
-    var name: String = ""
+    public var uniqueName: String = ""
+    private var ownerName: String = ""
+    private var dogName: String = ""
     
     func uniqueName(ownerName: String,dogName: String) {
-        self.name = ownerName + " " + dogName
+        self.ownerName = ownerName
+        self.dogName = dogName
+        self.uniqueName = ownerName + " " + dogName
     }
     
     func getOwnerName() -> String? {
-        return self.name.components(separatedBy: " ").first
+        return self.ownerName
     }
     
     func getDogName() -> String? {
-        return self.name.components(separatedBy: " ").last
+        return self.dogName
     }
     
-
 }
 let dog:Dog = Dog()
-dog.uniqueName(ownerName: "こげぱん", dogName: "ココア")
-print(dog.getOwnerName())
+dog.uniqueName(ownerName: "こげぱん", dogName: "アイス")
+
+//print(dog.getOwnerName()) ← 関数からならと呼び出せる_こげぱんが帰ってくる
+//print(dog.ownerName)　← privateなので呼びだせない
+
+print(dog.uniqueName) // ← publicなので呼びさせれる_今日の問題
+
 
 
 
