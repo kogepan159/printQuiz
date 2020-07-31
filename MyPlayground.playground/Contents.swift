@@ -1,50 +1,14 @@
-// 28日目 delegate編
-// 27日目の正解は「false」でした
+// 29日目 ジェネリック関数(ジェネリック型)
+// 28日目の正解は「Not enough money」でした
 import UIKit
 
-
-protocol MenuDelegate {
-    func canBay(isBuy: Bool)
+// ジェネリック関数(ジェネリック型)だと、型に依存しない作りができる
+// func checkSame(a: Int, b: Int) -> Bool { }
+// func checkSame(a: String, b: String) -> Bool { }
+// としなくても問題ないという書き方らしい。
+func checkSame<T:Equatable> (a: T, b: T) -> Bool {
+    return a == b
 }
 
-class Menu {
-    var delegate:MenuDelegate? = nil
-    private let brinkPrice: Int = 150
-    private let lunchPrice: Int = 1000
-    
-    func brink(money: Int) {
-        delegate?.canBay(isBuy: money >= brinkPrice)
-    }
-    
-    func lunch(money: Int) {
-        delegate?.canBay(isBuy: money >= lunchPrice)
-    }
-}
-
-class Wallet: MenuDelegate {
-    let menu: Menu = Menu()
-    var walletMoney : Int = 300
-    
-    init() {
-        menu.delegate = self
-    }
-    
-    func canBrink() {
-        menu.brink(money: walletMoney)
-    }
-    
-    func canLunch() {
-        menu.lunch(money: walletMoney)
-    }
-    
-    func canBay(isBuy: Bool) {
-        if isBuy {
-            print("Can buy")
-        } else {
-            print("Not enough money")
-        }
-    }
-}
-
-let wallet: Wallet = Wallet()
-wallet.canLunch()
+checkSame(a: 1, b: 2)
+print(checkSame(a: "aaa", b: "aaa"))
