@@ -1,14 +1,10 @@
-// 33日目 super
-// 32日目の正解は「300」でした
+// 34日目 extension
+// 33日目の正解は「5400」でした
 import UIKit
 import Foundation
 
-class TransportationFacilitiesChanger {
-    
-    var pasumomo: Int = 500
-    var suicaca: Int = 400
-    
-    
+
+extension Wallet {
     func chargePasumomo(charge: Int) {
         pasumomo = pasumomo + charge
     }
@@ -18,15 +14,17 @@ class TransportationFacilitiesChanger {
     }
 }
 
-class Wallet: TransportationFacilitiesChanger {
-   
-     func autoCharge() {
-        super.chargePasumomo(charge: 2000)
-        super.chargeSuicaca(charge: 5000)
+class Wallet {
+    var pasumomo: Int = 500
+    var suicaca: Int = 400
+    
+    func autoCharge() {
+        chargePasumomo(charge: 2000)
+        chargeSuicaca(charge: 5000)
     }
 }
 
 let wallet: Wallet = Wallet()
 wallet.autoCharge()
-print(wallet.suicaca)
+print(wallet.pasumomo)
 
