@@ -1,14 +1,22 @@
-// 29日目 ジェネリック関数(ジェネリック型)
-// 28日目の正解は「Not enough money」でした
+// 30日目 非同期処理
+// 29日目の正解は「true」でした
 import UIKit
 
-// ジェネリック関数(ジェネリック型)だと、型に依存しない作りができる
-// func checkSame(a: Int, b: Int) -> Bool { }
-// func checkSame(a: String, b: String) -> Bool { }
-// としなくても問題ないという書き方らしい。
-func checkSame<T:Equatable> (a: T, b: T) -> Bool {
-    return a == b
-}
 
-checkSame(a: 1, b: 2)
-print(checkSame(a: "aaa", b: "aaa"))
+// コンビニのレジが非同期処理をしていると話題になったことがありましたね。
+// それをソースコードに落としてみました。
+let queue = DispatchQueue.global(qos: .default)
+print("----- 1人目の会計スタート -----")
+queue.async {
+    print("1人目の電子レンジスタート")
+    sleep(3)
+    print("1人目の温め完了")
+    
+}
+print("----- 1人目の会計終了 -----")
+print("----- 2人目の会計スタート -----")
+print("----- 2人目の会計終了 -----")
+print("----- 3人目の会計スタート -----")
+print("----- 3人目の会計終了 -----")
+
+// 最後に出力されるのはなに？
