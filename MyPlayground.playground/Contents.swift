@@ -1,20 +1,32 @@
-// 32日目 willSet/didSet
-// 31日目の正解は「OK」でした
+// 33日目 super
+// 32日目の正解は「300」でした
 import UIKit
+import Foundation
 
-// didSetでoldValueを使うって便利ですね
+class TransportationFacilitiesChanger {
+    
+    var pasumomo: Int = 500
+    var suicaca: Int = 400
+    
+    
+    func chargePasumomo(charge: Int) {
+        pasumomo = pasumomo + charge
+    }
+    
+    func chargeSuicaca(charge: Int) {
+        suicaca = suicaca + charge
+    }
+}
 
-class Wallet {
-    var money : Int = 300 {
-        willSet {
-            print("willSet")
-        }
-        didSet {
-            print(oldValue) // ← 今日の問題がこちらです！
-        }
+class Wallet: TransportationFacilitiesChanger {
+   
+     func autoCharge() {
+        super.chargePasumomo(charge: 2000)
+        super.chargeSuicaca(charge: 5000)
     }
 }
 
 let wallet: Wallet = Wallet()
-wallet.money = 1000
+wallet.autoCharge()
+print(wallet.suicaca)
 
