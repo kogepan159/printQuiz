@@ -1,30 +1,42 @@
-// 26日目 struct編
-// 25日目の正解は「 」でした
+// 27日目 Closure編
+// 26日目の正解は「アイス」でした
 import UIKit
 
-// classではない、ひとまとまりにしたい時に使う
-struct UniqueAnimalName {
-    var uniqueName: String = ""
-    var ownerName: String = ""
-    var animalName: String = ""
-    
-    
-    mutating func setUniqueName(ownerName: String, dogName: String) {
-        self.ownerName = ownerName
-        self.animalName = dogName
-        self.uniqueName = ownerName + " " + dogName
+
+class CanBuy {
+    let brink = { (money: Int) -> Bool in
+        return 150 <= money
     }
     
-    func getOwnerName() -> String {
-        return ownerName
-    }
-    
-    func getAnimalName() -> String {
-        return animalName
+    let lunch = { (money: Int) -> Bool in
+        return 1000 <= money
     }
 }
+let walletMoney : Int = 300
 
-var name:UniqueAnimalName = UniqueAnimalName()
-name.setUniqueName(ownerName: "こげぱん", dogName: "アイス")
-print(name.getAnimalName())
+let canBuy: CanBuy = CanBuy()
+canBuy.brink(walletMoney)
+print(canBuy.lunch(walletMoney))
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+class Wallet {
+    let walletMoney : Int = 300
+}
