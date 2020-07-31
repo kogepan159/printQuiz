@@ -1,22 +1,17 @@
-// 30日目 非同期処理
-// 29日目の正解は「true」でした
+// 31日目 do-catch
+// 30日目の正解は「1人目の温め完了」でした
 import UIKit
 
-
-// コンビニのレジが非同期処理をしていると話題になったことがありましたね。
-// それをソースコードに落としてみました。
-let queue = DispatchQueue.global(qos: .default)
-print("----- 1人目の会計スタート -----")
-queue.async {
-    print("1人目の電子レンジスタート")
-    sleep(3)
-    print("1人目の温め完了")
-    
+func notEmpty(text: String) throws {
+    if text.isEmpty {
+        throw NSError(domain: "空文字です", code: -1, userInfo: ["textEmpty": true])
+    }
 }
-print("----- 1人目の会計終了 -----")
-print("----- 2人目の会計スタート -----")
-print("----- 2人目の会計終了 -----")
-print("----- 3人目の会計スタート -----")
-print("----- 3人目の会計終了 -----")
 
-// 最後に出力されるのはなに？
+do {
+    try notEmpty(text: "空文字です")
+    print("OK")
+} catch {
+    // エラーが発生した場合の処理
+    print(error.localizedDescription)
+}
