@@ -1,15 +1,42 @@
-// 24日目 private/public
-// 23日目の正解は「こげぱん」でした
+// 25日目 protocol編
+// 24日目の正解は「こげぱん　アイス」でした
 import UIKit
 
-class Dog : NSObject {
-    public var uniqueName: String = ""
-    private var ownerName: String = ""
-    private var dogName: String = ""
+// functionやテストを定義しておくこと
+protocol UniqueAnimalName {
+    var uniqueName: String { get set }
+    var ownerName: String { get set }
+    var animalName: String { get set }
+    func uniqueName(ownerName: String,dogName: String)
+    func getOwnerName() -> String?
+    func getAnimalName() -> String?
+}
+
+class Cat: UniqueAnimalName {
+    var animalName: String = ""
+    var uniqueName: String = ""
+    var ownerName: String = ""
+    
+    func uniqueName(ownerName: String, dogName: String) {
+    }
+    
+    func getOwnerName() -> String? {
+        return ""
+    }
+    
+    func getAnimalName() -> String? {
+        return ""
+    }
+}
+
+class Dog : UniqueAnimalName {
+    var animalName: String = ""
+    var uniqueName: String = ""
+    var ownerName: String = ""
     
     func uniqueName(ownerName: String,dogName: String) {
         self.ownerName = ownerName
-        self.dogName = dogName
+        self.animalName = dogName
         self.uniqueName = ownerName + " " + dogName
     }
     
@@ -17,20 +44,12 @@ class Dog : NSObject {
         return self.ownerName
     }
     
-    func getDogName() -> String? {
-        return self.dogName
+    func getAnimalName() -> String? {
+        return self.animalName
     }
-    
 }
+
 let dog:Dog = Dog()
 dog.uniqueName(ownerName: "こげぱん", dogName: "アイス")
-
-//print(dog.getOwnerName()) ← 関数からならと呼び出せる_こげぱんが帰ってくる
-//print(dog.ownerName)　← privateなので呼びだせない
-
-print(dog.uniqueName) // ← publicなので呼びさせれる_今日の問題
-
-
-
-
+print(Cat().uniqueName)
 
