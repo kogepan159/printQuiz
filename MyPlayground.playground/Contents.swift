@@ -2,6 +2,8 @@
 // 31日目の正解は「OK」でした
 import UIKit
 
+// didSetでoldValueを使うって便利ですね
+
 class Wallet {
     var money : Int = 300 {
         willSet {
