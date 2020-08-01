@@ -1,8 +1,12 @@
-// 38日目 タプル型
-// 37日目の正解は「同じ年である」でした
+// 39日目 配列を使ったfor文
+// 38日目の正解は「なしは、15個在庫がある」でした
 import UIKit
 
-let tplArray: [(Int,String, Int)] = [(1, "りんご", 12), (2, "なし", 5), (3, "みかん", 15)]
+let array: [Int] = [12, 5, 15]
+var count:Int = 0
 
+for addNum in array {
+    count =  count + addNum
+}
 
-print(tplArray[1].1 + "は、\(tplArray[2].2)個在庫がある")
+print(count)
