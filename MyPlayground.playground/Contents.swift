@@ -1,12 +1,14 @@
-// 39日目 配列を使ったfor文
-// 38日目の正解は「なしは、15個在庫がある」でした
+// 40日目 fmax/fminを使う
+// 39日目の正解は「32」でした
 import UIKit
 
-let array: [Int] = [12, 5, 15]
-var count:Int = 0
+let array: [Double] = [12, 5, 15, 2, 3, 4, 5, 6, 7, 8, 9, 100]
+var max: Int = 0
+var min: Int = 0
 
 for addNum in array {
-    count =  count + addNum
+    max = Int(fmax(Double(max), addNum))
+    min = Int(fmin(Double(min), addNum))
 }
 
-print(count)
+print(max, min)
