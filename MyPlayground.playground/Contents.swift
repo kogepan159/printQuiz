@@ -1,9 +1,24 @@
-// 36日目 少数の数制御
-// 35日目の正解は「500」でした
+// 37日目 Date型
+// 36日目の正解は「16.78」でした
 import UIKit
 
-let oneHundredRunTime: Double = 16.782
+// 日時を取得できる
+let formatter = DateFormatter()
+formatter.dateFormat = "yyyy年M月d日 HH:mm:SS"
+formatter.string(from: Date())
 
-print(Int(oneHundredRunTime))
-print(String(oneHundredRunTime))
-print(String(format: "%.2f", oneHundredRunTime)) // ←今日の問題
+// 日付取得する(この場合はと今の時間を取得)
+let today : Date = Date()
+let today2 : Date = Date()
+// 年数を取得したい時は、Calendarを使います
+let calendar = Calendar.current
+let year = calendar.component(.year, from: today)
+let year2 = calendar.component(.year, from: today2)
+
+if today == today2 {
+    print("等式でOK")
+} else if year == year2 {
+    print("同じ年である")
+} else {
+    print("全然別物")
+}
