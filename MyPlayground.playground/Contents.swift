@@ -1,5 +1,5 @@
-// 41日目 カウントアップ処理
-// 40日目の正解は「100 0」でした
+// 42日目 カウントダウン追加
+// 41日目の正解は「3」でした
 import UIKit
 
 class CountManagement {
@@ -9,14 +9,21 @@ class CountManagement {
         count += 1
     }
     
+    func countDown() {
+        count -= 1
+    }
+    
     func nowCount() -> Int {
         return count
     }
 }
 
 let count: CountManagement = CountManagement()
-
+count.countDown()
 count.countUp()
 count.countUp()
 count.countUp()
+count.countDown()
+count.countUp()
+count.countDown()
 print(count.nowCount())
