@@ -22,16 +22,28 @@
                                     <action selector="tapButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a2i-cz-JhH"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xEi-NH-4bj">
+                                <rect key="frame" x="16" y="106" width="382" height="32"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                    <segment title="テスト"/>
+                                </segments>
+                            </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xEi-NH-4bj" secondAttribute="trailing" constant="16" id="2zU-jU-hG7"/>
+                            <constraint firstItem="xEi-NH-4bj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="7e5-F6-NTI"/>
                             <constraint firstItem="opH-IR-tIf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Gw3-ca-O1l"/>
                             <constraint firstItem="opH-IR-tIf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="YIu-kv-AYH"/>
+                            <constraint firstItem="xEi-NH-4bj" firstAttribute="top" secondItem="opH-IR-tIf" secondAttribute="bottom" constant="16" id="bi1-2x-67f"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="quizButton" destination="opH-IR-tIf" id="9is-Ap-gv5"/>
+                        <outlet property="quizSegment" destination="xEi-NH-4bj" id="aJI-BL-xwX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
