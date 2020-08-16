@@ -1,5 +1,5 @@
-// 60日目 bundleId取得
-// 59日目の正解は「iPhoneである」でした
+// 61日目 bundleVersion取得
+// 60日目の正解は「com.kogepan.printQuiz」でした
 
 // 前提条件: このViewControllerを開いた時の処理
 import UIKit
@@ -19,8 +19,8 @@ class ViewController: UIViewController {
         tableview.reloadData()
         tableview.tableFooterView = UIView()
         
-        // アプリ固有のID
-        print(Bundle.main.bundleIdentifier)
+        // アプリのVersion
+        print(Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String)
     }
     
 }
