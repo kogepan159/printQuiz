@@ -1,5 +1,5 @@
-// 57日目 UIScreen編
-// 56日目の正解は「https://www.google.com/?hl=ja」でした
+// 58日目 OS判定
+// 57日目の正解は「幅も高さも同じ」でした
 
 // 前提条件: このViewControllerを開いた時の処理
 import UIKit
@@ -19,19 +19,11 @@ class ViewController: UIViewController {
         tableview.reloadData()
         tableview.tableFooterView = UIView()
         
-        if UIScreen.main.bounds.width == view.frame.size.width {
-            if UIScreen.main.bounds.height == view.frame.size.height {
-                print("幅も高さも同じ")
-            } else {
-                print("幅が同じで、高さが違う")
-            }
+        //最新OSである(シュミレーター 13.6とする)
+        if #available(iOS 13.0, *) {
+            print("最新OS")
         } else {
-            if UIScreen.main.bounds.height == view.frame.size.height {
-                print("幅が違うが、高さが同じ")
-            } else {
-                print("幅も高さも違う")
-            }
-            
+            print("そうじゃない")
         }
     }
     
