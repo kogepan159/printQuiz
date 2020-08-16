@@ -1,5 +1,5 @@
-// 58日目 OS判定
-// 57日目の正解は「幅も高さも同じ」でした
+// 59日目 端末判定
+// 58日目の正解は「最新OS」でした
 
 // 前提条件: このViewControllerを開いた時の処理
 import UIKit
@@ -19,11 +19,11 @@ class ViewController: UIViewController {
         tableview.reloadData()
         tableview.tableFooterView = UIView()
         
-        //最新OSである(シュミレーター 13.6とする)
-        if #available(iOS 13.0, *) {
-            print("最新OS")
+        // 端末判定
+        if UIDevice.current.userInterfaceIdiom  == .pad {
+            print("iPodである")
         } else {
-            print("そうじゃない")
+            print("iPhoneである")
         }
     }
     
