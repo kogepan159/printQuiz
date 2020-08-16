@@ -30,25 +30,44 @@
                                     <segment title="テスト"/>
                                 </segments>
                             </segmentedControl>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RNk-rl-ueK">
+                                <rect key="frame" x="0.0" y="145" width="414" height="717"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="Cell" id="hZ9-Ua-Ecr">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="hZ9-Ua-Ecr" id="qDv-Zd-Dca">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
+                            <constraint firstItem="RNk-rl-ueK" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="0HV-5l-vZE"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xEi-NH-4bj" secondAttribute="trailing" constant="16" id="2zU-jU-hG7"/>
                             <constraint firstItem="xEi-NH-4bj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="7e5-F6-NTI"/>
+                            <constraint firstItem="RNk-rl-ueK" firstAttribute="top" secondItem="xEi-NH-4bj" secondAttribute="bottom" constant="8" id="8Rb-wT-338"/>
+                            <constraint firstItem="RNk-rl-ueK" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="GvK-ya-aN2"/>
                             <constraint firstItem="opH-IR-tIf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Gw3-ca-O1l"/>
                             <constraint firstItem="opH-IR-tIf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="YIu-kv-AYH"/>
                             <constraint firstItem="xEi-NH-4bj" firstAttribute="top" secondItem="opH-IR-tIf" secondAttribute="bottom" constant="16" id="bi1-2x-67f"/>
+                            <constraint firstItem="RNk-rl-ueK" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="qEd-Jb-Z2K"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
                         <outlet property="quizButton" destination="opH-IR-tIf" id="9is-Ap-gv5"/>
                         <outlet property="quizSegment" destination="xEi-NH-4bj" id="aJI-BL-xwX"/>
+                        <outlet property="tableview" destination="RNk-rl-ueK" id="1ZV-Hx-WtT"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139" y="92"/>
+            <point key="canvasLocation" x="137.68115942028987" y="91.741071428571431"/>
         </scene>
     </scenes>
 </document>
