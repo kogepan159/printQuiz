@@ -1,5 +1,5 @@
-// 51日目 TableView
-// 50日目の正解は「0」でした
+// 52日目 UILabel編
+// 51日目の正解は「バナナ」でした
 
 // 前提条件: このViewControllerを開いた時の処理
 import UIKit
@@ -8,6 +8,7 @@ class ViewController: UIViewController {
     @IBOutlet weak var quizSegment: UISegmentedControl!
     @IBOutlet weak var quizButton: UIButton!
     @IBOutlet weak var tableview: UITableView!
+    @IBOutlet weak var quizLabel: UILabel!
     let fruitsArray = ["みかん","もも", "バナナ", "リンゴ", "すいか"]
     
     override func viewDidLoad() {
@@ -16,7 +17,11 @@ class ViewController: UIViewController {
         tableview.dataSource = self
         tableview.reloadData()
         tableview.tableFooterView = UIView()
+        
+        quizLabel.text = "aaaaa"
+        print(quizLabel.font.pointSize)
     }
+    
 }
 
 

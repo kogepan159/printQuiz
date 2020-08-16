@@ -44,6 +44,13 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aag-3u-1N4">
+                                <rect key="frame" x="246" y="60" width="148" height="25"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -61,6 +68,7 @@
                     </view>
                     <connections>
                         <outlet property="quizButton" destination="opH-IR-tIf" id="9is-Ap-gv5"/>
+                        <outlet property="quizLabel" destination="Aag-3u-1N4" id="S5R-va-5Uc"/>
                         <outlet property="quizSegment" destination="xEi-NH-4bj" id="aJI-BL-xwX"/>
                         <outlet property="tableview" destination="RNk-rl-ueK" id="1ZV-Hx-WtT"/>
                     </connections>
