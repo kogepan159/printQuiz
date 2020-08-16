@@ -1,5 +1,5 @@
-// 52日目 UILabel編
-// 51日目の正解は「バナナ」でした
+// 53日目 UIColor編
+// 52日目の正解は「17.0」でした
 
 // 前提条件: このViewControllerを開いた時の処理
 import UIKit
@@ -19,7 +19,8 @@ class ViewController: UIViewController {
         tableview.tableFooterView = UIView()
         
         quizLabel.text = "aaaaa"
-        print(quizLabel.font.pointSize)
+        quizLabel.backgroundColor = UIColor.red//(R:1.0 G:1.0 B:1.0 A:1.0) 範囲 0~1
+        print(UIColor.red.cgColor.alpha)
     }
     
 }
