@@ -1,8 +1,10 @@
-// 55日目 UITableview_Section複数
-// 54日目の正解は「40」でした
+// 56日目 UIWebView複数
+// 55日目の正解は「0」でした
 
 // 前提条件: このViewControllerを開いた時の処理
 import UIKit
+import WebKit
+
 class ViewController: UIViewController {
     
     @IBOutlet weak var quizSegment: UISegmentedControl!
@@ -11,6 +13,12 @@ class ViewController: UIViewController {
     @IBOutlet weak var quizLabel: UILabel!
     let fruitsArray = ["みかん","もも", "バナナ", "リンゴ", "すいか"]
     
+    var webView: WKWebView!
+    
+    // adjust SafeArea top space
+    // portrait のみを想定
+    var topPadding:CGFloat = 0
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableview.delegate = self
@@ -18,8 +26,20 @@ class ViewController: UIViewController {
         tableview.reloadData()
         tableview.tableFooterView = UIView()
         
-        quizLabel.text = "aaaaa"
-        quizLabel.backgroundColor = UIColor.red//(R:1.0 G:1.0 B:1.0 A:1.0) 範囲 0~1
+        let screenWidth:CGFloat = view.frame.size.width
+        let screenHeight:CGFloat = view.frame.size.height
+        let rect = CGRect(x: 0,y: topPadding, width: screenWidth, height: screenHeight - topPadding)
+        let webConfiguration = WKWebViewConfiguration()
+        webView = WKWebView(frame: rect, configuration: webConfiguration)
+        let webUrl = URL(string: "https://www.google.com/?hl=ja")!
+        let myRequest = URLRequest(url: webUrl)
+        webView.load(myRequest)
+        // ここのPrintをお答えください
+        print(webUrl.absoluteString)
+        
+        self.view.addSubview(webView)
+               
+        
     }
     
 }
@@ -31,8 +51,6 @@ extension ViewController:  UITableViewDelegate, UITableViewDataSource {
         return 1
     }
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        // ここのPrintをお答えください
-        print(section)
         return "果物リスト"
     }
     
