@@ -1,5 +1,5 @@
-// 54日目 UITableview2編
-// 53日目の正解は「1.0」でした
+// 55日目 UITableview_Section複数
+// 54日目の正解は「40」でした
 
 // 前提条件: このViewControllerを開いた時の処理
 import UIKit
@@ -30,13 +30,18 @@ extension ViewController:  UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        // ここのPrintをお答えください
+        print(section)
+        return "果物リスト"
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return fruitsArray.count
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return  indexPath.row%2 == 0 ? 40 : 80
+        return 40
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -44,8 +49,7 @@ extension ViewController:  UITableViewDelegate, UITableViewDataSource {
         cell.textLabel?.text = fruitsArray[indexPath.row] + String(indexPath.row)
         
         if indexPath.row == 2 {
-            // ここのPrintをお答えください
-            print(cell.frame.height)
+            
         }
         return cell
     }
