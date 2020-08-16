@@ -1,5 +1,5 @@
-// 59日目 端末判定
-// 58日目の正解は「最新OS」でした
+// 60日目 bundleId取得
+// 59日目の正解は「iPhoneである」でした
 
 // 前提条件: このViewControllerを開いた時の処理
 import UIKit
@@ -19,12 +19,8 @@ class ViewController: UIViewController {
         tableview.reloadData()
         tableview.tableFooterView = UIView()
         
-        // 端末判定
-        if UIDevice.current.userInterfaceIdiom  == .pad {
-            print("iPodである")
-        } else {
-            print("iPhoneである")
-        }
+        // アプリ固有のID
+        print(Bundle.main.bundleIdentifier)
     }
     
 }
