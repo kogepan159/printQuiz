@@ -1,5 +1,5 @@
-// 61日目 bundleVersion取得
-// 60日目の正解は「com.kogepan.printQuiz」でした
+// 62日目 UIImage_iOS13用(Native画像を使う)編
+// 61日目の正解は「1.0.0」でした
 
 // 前提条件: このViewControllerを開いた時の処理
 import UIKit
@@ -19,8 +19,9 @@ class ViewController: UIViewController {
         tableview.reloadData()
         tableview.tableFooterView = UIView()
         
-        // アプリのVersion
-        print(Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as! String)
+        // iOS13以上で使えるデフォルトアイコン
+        quizButton.setImage(UIImage.init(systemName: "arrow.down.left.video"), for: .normal)
+        print(quizButton.titleLabel?.text)
     }
     
 }
