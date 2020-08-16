@@ -1,9 +1,8 @@
-// 56日目 UIWebView複数
-// 55日目の正解は「0」でした
+// 57日目 UIScreen編
+// 56日目の正解は「https://www.google.com/?hl=ja」でした
 
 // 前提条件: このViewControllerを開いた時の処理
 import UIKit
-import WebKit
 
 class ViewController: UIViewController {
     
@@ -13,12 +12,6 @@ class ViewController: UIViewController {
     @IBOutlet weak var quizLabel: UILabel!
     let fruitsArray = ["みかん","もも", "バナナ", "リンゴ", "すいか"]
     
-    var webView: WKWebView!
-    
-    // adjust SafeArea top space
-    // portrait のみを想定
-    var topPadding:CGFloat = 0
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         tableview.delegate = self
@@ -26,20 +19,20 @@ class ViewController: UIViewController {
         tableview.reloadData()
         tableview.tableFooterView = UIView()
         
-        let screenWidth:CGFloat = view.frame.size.width
-        let screenHeight:CGFloat = view.frame.size.height
-        let rect = CGRect(x: 0,y: topPadding, width: screenWidth, height: screenHeight - topPadding)
-        let webConfiguration = WKWebViewConfiguration()
-        webView = WKWebView(frame: rect, configuration: webConfiguration)
-        let webUrl = URL(string: "https://www.google.com/?hl=ja")!
-        let myRequest = URLRequest(url: webUrl)
-        webView.load(myRequest)
-        // ここのPrintをお答えください
-        print(webUrl.absoluteString)
-        
-        self.view.addSubview(webView)
-               
-        
+        if UIScreen.main.bounds.width == view.frame.size.width {
+            if UIScreen.main.bounds.height == view.frame.size.height {
+                print("幅も高さも同じ")
+            } else {
+                print("幅が同じで、高さが違う")
+            }
+        } else {
+            if UIScreen.main.bounds.height == view.frame.size.height {
+                print("幅が違うが、高さが同じ")
+            } else {
+                print("幅も高さも違う")
+            }
+            
+        }
     }
     
 }
