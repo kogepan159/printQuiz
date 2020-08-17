@@ -1,5 +1,5 @@
-// 62日目 UIImage_iOS13用(Native画像を使う)編
-// 61日目の正解は「1.0.0」でした
+// 63日目 Userdefault編
+// 62日目の正解は「Button」でした
 
 // 前提条件: このViewControllerを開いた時の処理
 import UIKit
@@ -21,7 +21,9 @@ class ViewController: UIViewController {
         
         // iOS13以上で使えるデフォルトアイコン
         quizButton.setImage(UIImage.init(systemName: "arrow.down.left.video"), for: .normal)
-        print(quizButton.titleLabel?.text)
+        UserDefaults.standard.setValue("テスト", forKey: "test")
+        UserDefaults.standard.synchronize()
+        print(UserDefaults.standard.string(forKey: "test"))
     }
     
 }
