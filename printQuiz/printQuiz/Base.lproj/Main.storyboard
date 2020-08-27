@@ -19,6 +19,7 @@
                                 <rect key="frame" x="16" y="60" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
                                 <connections>
+                                    <action selector="tapButton2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VYL-GU-Cmb"/>
                                     <action selector="tapButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a2i-cz-JhH"/>
                                 </connections>
                             </button>

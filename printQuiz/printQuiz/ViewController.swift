@@ -1,5 +1,5 @@
-// 63日目 Userdefault編
-// 62日目の正解は「Button」でした
+// 64日目 ボタンアクション編
+// 63日目の正解は「テスト」でした
 
 // 前提条件: このViewControllerを開いた時の処理
 import UIKit
@@ -18,13 +18,19 @@ class ViewController: UIViewController {
         tableview.dataSource = self
         tableview.reloadData()
         tableview.tableFooterView = UIView()
-        
-        // iOS13以上で使えるデフォルトアイコン
-        quizButton.setImage(UIImage.init(systemName: "arrow.down.left.video"), for: .normal)
-        UserDefaults.standard.setValue("テスト", forKey: "test")
-        UserDefaults.standard.synchronize()
-        print(UserDefaults.standard.string(forKey: "test"))
+        //ソースコードでButton Action追加
+        quizButton.addTarget(self,action: #selector(self.tapButton(_ :)),for: .touchUpInside)
     }
+    
+    // Action内容
+    @objc func tapButton(_ sender: UIButton){
+        print("ボタンがタップされた")
+    }
+    // StoryBoardから紐づけたパターン
+    @IBAction func tapButton2(_ sender: Any) {
+        print("ボタンがタップされた_storybard")
+    }
+    // 今回の問題は、Buttonをタップされた時に呼び出されるprintは？？
     
 }
 
