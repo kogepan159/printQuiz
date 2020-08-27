@@ -59,6 +59,7 @@
                     <connections>
                         <outlet property="progressView" destination="OOQ-NH-eOP" id="IqN-Az-y6G"/>
                         <outlet property="quizButton" destination="opH-IR-tIf" id="9is-Ap-gv5"/>
+                        <outlet property="quizButtonTopLayout" destination="YIu-kv-AYH" id="7VI-6c-ldd"/>
                         <outlet property="quizLabel" destination="Aag-3u-1N4" id="S5R-va-5Uc"/>
                         <outlet property="quizSegment" destination="xEi-NH-4bj" id="aJI-BL-xwX"/>
                     </connections>
