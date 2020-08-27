@@ -1,5 +1,6 @@
-// 71日目 AutoLayout可変
-// 70日目の正解は「false」でした
+// 72日目 メインスレッド対応
+// 71日目の正解は「100.0」でした
+// 今回参考にしたサイト: https://qiita.com/valmet/items/6de0921ca6106414228c
 
 // 前提条件: このViewControllerを開いた時の処理
 import UIKit
@@ -16,10 +17,11 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // ソースコードでautoLayout変更可能
-        // (回転処理や端末ごとに別処理したいときに使うことがあります)
-        quizButtonTopLayout.constant = 100
-        print(quizButtonTopLayout.constant)
+        DispatchQueue.main.async {
+            // メインスレッドで実行 UIの処理など
+            self.quizLabel.text = "メインスレッド"
+            print(self.quizButton.titleLabel?.text)
+        }
         
     }
 }
