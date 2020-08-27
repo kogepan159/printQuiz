@@ -26,6 +26,9 @@
                                     <segment title="Second"/>
                                     <segment title="テスト"/>
                                 </segments>
+                                <connections>
+                                    <action selector="segmentedControlChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="ter-Ms-bEw"/>
+                                </connections>
                             </segmentedControl>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RNk-rl-ueK">
                                 <rect key="frame" x="0.0" y="145" width="414" height="717"/>

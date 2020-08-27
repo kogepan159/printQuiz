@@ -1,5 +1,5 @@
-// 66日目 Tableviewアクション
-// 65日目の正解は「Label」でした
+// 67日目 セグメントアクション
+// 66日目の正解は「0」でした
 
 // 前提条件: このViewControllerを開いた時の処理
 import UIKit
@@ -18,6 +18,11 @@ class ViewController: UIViewController {
         tableview.dataSource = self
         tableview.reloadData()
         tableview.tableFooterView = UIView()
+    }
+    
+    @IBAction func segmentedControlChanged(_ sender: UISegmentedControl) {
+        // テストをタップした時
+        print(sender.selectedSegmentIndex)
     }
 }
 
