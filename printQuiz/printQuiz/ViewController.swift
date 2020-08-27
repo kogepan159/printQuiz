@@ -1,6 +1,5 @@
-// 69日目 progressView
-// 68日目の正解は「1111」でした
-// 今回お世話になったURL: https://qiita.com/fromage-blanc/items/2ec7c89c3484765acf8f
+// 70日目 isHedden
+// 69日目の正解は「1.0」でした
 
 // 前提条件: このViewControllerを開いた時の処理
 import UIKit
@@ -12,32 +11,18 @@ class ViewController: UIViewController {
     @IBOutlet weak var quizLabel: UILabel!
     
     @IBOutlet weak var progressView: UIProgressView!
-    var progress:Float = 0.0
-    var timer:Timer!
     let fruitsArray = ["みかん","もも", "バナナ", "リンゴ", "すいか"]
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        progress = 0
-        quizLabel.text = "please wait ..."
-        /// タイマー
-        timer = Timer.scheduledTimer(timeInterval: 0.01,
-                             target: self,
-                             selector: #selector(ViewController.timerUpdate),
-                             userInfo: nil,
-                             repeats: true)
+        // isEnabledは、機能有効/無効を変更する機能
+        // isHiddenは、表示/非表示を変更する機能
+        // trueが非表示状態
+        quizLabel.isHidden = true
+        // falseが表示状態
+        quizLabel.isHidden = false
+        print(quizButton.isHidden)
+        
     }
-    
-    @objc func timerUpdate() {
-        progress = progress + 0.001
-        if progress < 1.1 {  // 浮動小数点誤差のため、<= 1.0 だとtrueにならないことがある
-            progressView.setProgress(progress, animated: true)
-        } else {
-            timer.invalidate()
-            print(progressView.progress)
-            quizLabel.text = "Complete !"
-        }
-    }
-    
 }
 
