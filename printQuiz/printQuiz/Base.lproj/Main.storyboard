@@ -43,12 +43,6 @@
                                 <rect key="frame" x="43" y="240" width="150" height="2"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </progressView>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="a6F-gc-Ehr">
-                                <rect key="frame" x="20" y="171" width="261" height="34"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
@@ -63,10 +57,10 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="progressView" destination="OOQ-NH-eOP" id="IqN-Az-y6G"/>
                         <outlet property="quizButton" destination="opH-IR-tIf" id="9is-Ap-gv5"/>
                         <outlet property="quizLabel" destination="Aag-3u-1N4" id="S5R-va-5Uc"/>
                         <outlet property="quizSegment" destination="xEi-NH-4bj" id="aJI-BL-xwX"/>
-                        <outlet property="quizTextField" destination="a6F-gc-Ehr" id="uul-If-Ap7"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
