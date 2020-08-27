@@ -18,10 +18,6 @@
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="opH-IR-tIf">
                                 <rect key="frame" x="16" y="60" width="46" height="30"/>
                                 <state key="normal" title="Button"/>
-                                <connections>
-                                    <action selector="tapButton2:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VYL-GU-Cmb"/>
-                                    <action selector="tapButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="a2i-cz-JhH"/>
-                                </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xEi-NH-4bj">
                                 <rect key="frame" x="16" y="106" width="382" height="32"/>

@@ -1,5 +1,5 @@
-// 64日目 ボタンアクション編
-// 63日目の正解は「テスト」でした
+// 65日目 View(Label)にタップアクション
+// 64日目の正解は「ボタンがタップされた」でした
 
 // 前提条件: このViewControllerを開いた時の処理
 import UIKit
@@ -18,19 +18,16 @@ class ViewController: UIViewController {
         tableview.dataSource = self
         tableview.reloadData()
         tableview.tableFooterView = UIView()
-        //ソースコードでButton Action追加
-        quizButton.addTarget(self,action: #selector(self.tapButton(_ :)),for: .touchUpInside)
+        //ソースコードでLabel Action追加
+        quizLabel.isUserInteractionEnabled = true
+        let tapGesture = UITapGestureRecognizer(target: self, action: #selector(userDidTapLabel(tapGestureRecognizer:)))
+        quizLabel.addGestureRecognizer(tapGesture)
     }
     
     // Action内容
-    @objc func tapButton(_ sender: UIButton){
-        print("ボタンがタップされた")
+    @objc func userDidTapLabel(tapGestureRecognizer: UITapGestureRecognizer) {
+        print(quizLabel.text)
     }
-    // StoryBoardから紐づけたパターン
-    @IBAction func tapButton2(_ sender: Any) {
-        print("ボタンがタップされた_storybard")
-    }
-    // 今回の問題は、Buttonをタップされた時に呼び出されるprintは？？
     
 }
 
