@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		092792122505E1B3004327DB /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 092792142505E1B3004327DB /* Localizable.strings */; };
+		092792172505E88A004327DB /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 092792162505E88A004327DB /* SecondViewController.swift */; };
 		0989EA6C24DFFD1500ADF56E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0989EA6B24DFFD1500ADF56E /* AppDelegate.swift */; };
 		0989EA6E24DFFD1500ADF56E /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0989EA6D24DFFD1500ADF56E /* SceneDelegate.swift */; };
 		0989EA7024DFFD1500ADF56E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0989EA6F24DFFD1500ADF56E /* ViewController.swift */; };
@@ -41,6 +42,7 @@
 		0927920F2505E176004327DB /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		092792132505E1B3004327DB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		092792152505E1B5004327DB /* ja */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ja; path = ja.lproj/Localizable.strings; sourceTree = "<group>"; };
+		092792162505E88A004327DB /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
 		0989EA6824DFFD1500ADF56E /* printQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = printQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0989EA6B24DFFD1500ADF56E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0989EA6D24DFFD1500ADF56E /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				0989EA6B24DFFD1500ADF56E /* AppDelegate.swift */,
 				0989EA6D24DFFD1500ADF56E /* SceneDelegate.swift */,
 				0989EA6F24DFFD1500ADF56E /* ViewController.swift */,
+				092792162505E88A004327DB /* SecondViewController.swift */,
 				0989EA7124DFFD1500ADF56E /* Main.storyboard */,
 				0989EA7724DFFD1700ADF56E /* Assets.xcassets */,
 				0989EA7924DFFD1700ADF56E /* LaunchScreen.storyboard */,
@@ -273,6 +276,7 @@
 				0989EA7624DFFD1500ADF56E /* printQuiz.xcdatamodeld in Sources */,
 				0989EA7024DFFD1500ADF56E /* ViewController.swift in Sources */,
 				0989EA6C24DFFD1500ADF56E /* AppDelegate.swift in Sources */,
+				092792172505E88A004327DB /* SecondViewController.swift in Sources */,
 				0989EA6E24DFFD1500ADF56E /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
