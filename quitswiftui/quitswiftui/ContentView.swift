@@ -1,29 +1,22 @@
-// 90日目　UserDefaults
-// 89日目の正解は「次へ」でした
-// 参考URL: https://qiita.com/From_F/items/ee016b603b72f68a7f5e
+// 91日目　DatePicker
+// 90日目の正解は「Hello, こげぱん」でした
+// 参考URL: https://capibara1969.com/2195/
 
-//問題: Your nameに「こげぱん」といれるとどうなるのか？
+//問題: 2020年10月08日といれるとどうなるのか？(年月日までご回答ください)
 
 import SwiftUI
 
 struct ContentView: View {
-    @State var inputText:String = ""
-    @State var displayText:String = ""
+   @State private var selectionDate = Date()
 
     var body: some View {
         VStack {
-            Text("Hello, \(self.displayText)!")
-            TextField("Your name", text: $inputText , onCommit: {
-                UserDefaults.standard.set(self.inputText, forKey: "name")
-                self.displayText = self.inputText
-                self.inputText = ""
-                })
-                .padding()
-        }
-        .onAppear {
-            self.displayText = "World"
-            guard let userdefaultText = UserDefaults.standard.value(forKey: "name") as? String else { return }
-            self.displayText = userdefaultText
+            DatePicker("日付", selection: $selectionDate)
+            HStack {
+                Text("出国日時: ")
+                Text(selectionDate.description)
+            }
+            
         }
     }
 }
