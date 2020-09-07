@@ -1,8 +1,8 @@
-// 77日目 画面遷移モーダル
-// 76日目の正解は「2番目」でした
+// 78日目 閉じる処理追加
+// 77日目の正解は「2番目」でした
 // 今回参考にしたサイト: https://qiita.com/rymshm/items/5fbff3283c0439e73117
 
-// 前提条件: このViewControllerを開いた時の処理
+// 問題: 2番目の画面から、戻ってきたときに最後にPrintされたものは？
 import UIKit
 
 class ViewController: UIViewController {
@@ -14,9 +14,11 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var progressView: UIProgressView!
     let fruitsArray = ["みかん","もも", "バナナ", "リンゴ", "すいか"]
+    let count = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(fruitsArray[count])
         
     }
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

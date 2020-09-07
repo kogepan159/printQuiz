@@ -80,7 +80,20 @@
                     <view key="view" contentMode="scaleToFill" id="mND-2E-lYq">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5UC-6f-Y5o">
+                                <rect key="frame" x="184" y="406" width="46" height="30"/>
+                                <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="backButton:" destination="kJ5-US-wnX" eventType="touchUpInside" id="aaL-K5-QsP"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="5UC-6f-Y5o" firstAttribute="centerX" secondItem="mND-2E-lYq" secondAttribute="centerX" id="QNh-hY-HT3"/>
+                            <constraint firstItem="5UC-6f-Y5o" firstAttribute="centerY" secondItem="mND-2E-lYq" secondAttribute="centerY" id="sIJ-wR-YkR"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="aYR-Zu-vzY"/>
                     </view>
                     <navigationItem key="navigationItem" id="tlm-xw-WX3"/>
