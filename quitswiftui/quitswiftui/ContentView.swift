@@ -1,28 +1,15 @@
-// 86日目　 端末判定+switch文
-// 85日目の正解は「OS13.0以外 13.6」でした
+// 87日目　bundleId取得
+// 86日目の正解は「吾輩はiPhoneである」でした
 
-//問題: phoneの時に、buildすると何が表示されますか？
+//問題: buildすると何が表示されますか？
 
 import SwiftUI
-import WebKit
 
 struct ContentView: View {
     var body: some View {
-        switch UIDevice.current.userInterfaceIdiom  {
-        case .phone:
             return HStack {
-                Text("吾輩はiPhoneである")
+                Text(Bundle.main.bundleIdentifier ?? "")
             }
-        case .pad:
-            return HStack {
-                Text("吾輩はiPadである")
-            }
-        default:
-            return HStack {
-                Text("iPhone/iPadじゃない")
-            }
-        }
-        
     }
 }
 
