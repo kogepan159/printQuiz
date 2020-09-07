@@ -1,15 +1,19 @@
-// 88日目　bundleVersion取得
-// 87日目の正解は「com.junyakengo.quitswiftui.quitswiftui」でした
+// 89日目　UIImage_iOS13用+ImageTap
+// 88日目の正解は「1.0」でした
 
-//問題: buildすると何が表示されますか？
+//問題: Imageをタップすると何が表示されますか？
 
 import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-            return HStack {
-                Text(Bundle.main.object(forInfoDictionaryKey: "CFBundleShortVersionString") as? String ?? "")
-            }
+        Image(systemName: "pencil").resizable()
+            .frame(width: 100, height: 100, alignment: .center)
+            .padding()
+            .border(Color.red, width: 2)
+            .onTapGesture {
+                print("次へ")
+        }
     }
 }
 
