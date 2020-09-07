@@ -17,9 +17,9 @@
                         <subviews>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="opH-IR-tIf">
                                 <rect key="frame" x="16" y="60" width="46" height="30"/>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="プラス"/>
                                 <connections>
-                                    <action selector="nextAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lJf-el-KtE"/>
+                                    <action selector="addAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="cbz-f3-awH"/>
                                 </connections>
                             </button>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="xEi-NH-4bj">
@@ -33,8 +33,8 @@
                                     <action selector="segmentedControlChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="ter-Ms-bEw"/>
                                 </connections>
                             </segmentedControl>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aag-3u-1N4">
-                                <rect key="frame" x="294" y="60" width="100" height="20.5"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Aag-3u-1N4">
+                                <rect key="frame" x="157" y="60" width="100" height="20.5"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="aXV-y1-bvS"/>
                                 </constraints>
@@ -46,16 +46,25 @@
                                 <rect key="frame" x="43" y="240" width="150" height="2"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </progressView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rdV-8Y-ZXU">
+                                <rect key="frame" x="336" y="60" width="62" height="30"/>
+                                <state key="normal" title="マイナス"/>
+                                <connections>
+                                    <action selector="minusAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="zoX-HF-oiy"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xEi-NH-4bj" secondAttribute="trailing" constant="16" id="2zU-jU-hG7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="rdV-8Y-ZXU" secondAttribute="trailing" constant="16" id="3hz-9g-Uwo"/>
                             <constraint firstItem="Aag-3u-1N4" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="4QY-mD-tU6"/>
                             <constraint firstItem="xEi-NH-4bj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="7e5-F6-NTI"/>
                             <constraint firstItem="opH-IR-tIf" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="Gw3-ca-O1l"/>
+                            <constraint firstItem="Aag-3u-1N4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="TUj-a2-ZE1"/>
                             <constraint firstItem="opH-IR-tIf" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="YIu-kv-AYH"/>
                             <constraint firstItem="xEi-NH-4bj" firstAttribute="top" secondItem="opH-IR-tIf" secondAttribute="bottom" constant="16" id="bi1-2x-67f"/>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Aag-3u-1N4" secondAttribute="trailing" constant="20" id="ftT-0x-AYy"/>
+                            <constraint firstItem="rdV-8Y-ZXU" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="kSE-cf-879"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>

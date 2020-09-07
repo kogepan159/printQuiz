@@ -1,7 +1,7 @@
-// 78日目 閉じる処理追加
-// 77日目の正解は「2番目」でした
+// 79日目 カウントダウンカウントアップ
+// 78日目の正解は「2番目」でした
 
-// 問題: 2番目の画面から、戻ってきたときに最後にPrintされたものは？
+// 問題: プラス3回、マイナス2回を押したときに最後に出力されたのは？
 import UIKit
 
 class ViewController: UIViewController {
@@ -13,29 +13,23 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var progressView: UIProgressView!
     let fruitsArray = ["みかん","もも", "バナナ", "リンゴ", "すいか"]
-    let count = 0
+    var count = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print(fruitsArray[count])
         
     }
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let identifier = segue.identifier else {
-            // identifierが取れなかったら処理やめる
-            return
-        }
-         
-        if(identifier == "goNext") {
-            // NavigationControllerの一番目のViewControllerが次の画面
-            let vc = segue.destination as! SecondViewController
-            vc.testTitle = segue as? String ?? ""
-          
-        }
+    
+    @IBAction func addAction(_ sender: Any) {
+        count += 1
+        quizLabel.text = String(count)
+        print(count)
     }
-
-    @IBAction func nextAction(_ sender: Any) {
-        performSegue(withIdentifier: "goNext", sender: "nil")
+    
+    @IBAction func minusAction(_ sender: Any) {
+        count -= 1
+        quizLabel.text = String(count)
     }
 }
 
