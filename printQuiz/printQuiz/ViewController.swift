@@ -1,7 +1,6 @@
-// 79日目 カウントダウンカウントアップ
-// 78日目の正解は「2番目」でした
+// 80日目 ダークモード
+// 79日目の正解は「3」でした
 
-// 問題: プラス3回、マイナス2回を押したときに最後に出力されたのは？
 import UIKit
 
 class ViewController: UIViewController {
@@ -17,7 +16,12 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        print(fruitsArray[count])
+        
+        // UIColor.white
+        // UIColor.black
+        // ダークモードとライトモード対応できないので、UIColor.labelを利用する
+        quizLabel.textColor = UIColor.label
+        print(quizLabel.text)
         
     }
     
