@@ -1,14 +1,25 @@
-// 84日目　WKWebView(UIWebView)
-// 83日目の正解は「1」でした
+// 85日目　OS(OS判定)+if文
+// 84日目の正解は「https://www.apple.com」でした
 
-//問題: 何が出力されるでしょうか？
+//問題: OS13.6の時に、どのように表示されますか？
 
 import SwiftUI
 import WebKit
 
 struct ContentView: View {
     var body: some View {
-        WebView(loadUrl: "https://www.apple.com")
+        if UIDevice.current.systemVersion == "13.0" {
+            return HStack {
+                Text("OS13.0")
+                Text(UIDevice.current.systemVersion)
+            }
+        } else {
+            return HStack {
+                Text("OS13.0以外")
+                Text(UIDevice.current.systemVersion)
+            }
+        }
+        
     }
 }
 
@@ -19,15 +30,5 @@ struct ContentView_Previews: PreviewProvider {
 }
 
 
-struct WebView: UIViewRepresentable {
-    var loadUrl:String
 
-    func makeUIView(context: Context) -> WKWebView {
-        return WKWebView()
-    }
 
-    func updateUIView(_ uiView: WKWebView, context: Context) {
-        print(loadUrl)
-        uiView.load(URLRequest(url: URL(string: loadUrl)!))
-    }
-}
