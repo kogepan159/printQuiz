@@ -1,0 +1,15 @@
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Aag-3u-1N4"; */
+"Aag-3u-1N4.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Button"; ObjectID = "opH-IR-tIf"; */
+"opH-IR-tIf.normalTitle" = "Button";
+
+/* Class = "UISegmentedControl"; xEi-NH-4bj.segmentTitles[0] = "First"; ObjectID = "xEi-NH-4bj"; */
+"xEi-NH-4bj.segmentTitles[0]" = "First";
+
+/* Class = "UISegmentedControl"; xEi-NH-4bj.segmentTitles[1] = "Second"; ObjectID = "xEi-NH-4bj"; */
+"xEi-NH-4bj.segmentTitles[1]" = "Second";
+
+/* Class = "UISegmentedControl"; xEi-NH-4bj.segmentTitles[2] = "テスト"; ObjectID = "xEi-NH-4bj"; */
+"xEi-NH-4bj.segmentTitles[2]" = "テスト";
