@@ -1,23 +1,21 @@
-// 91日目　DatePicker
-// 90日目の正解は「Hello, こげぱん」でした
+// 92日目　メインスレッド対応
+// 91日目の正解は「2020-10-08」でした
 // 参考URL: https://capibara1969.com/2195/
 
-//問題: 2020年10月08日といれるとどうなるのか？(年月日までご回答ください)
+//問題: タイトルをタップすると、何が表示されるでしょうか？
 
 import SwiftUI
 
 struct ContentView: View {
-   @State private var selectionDate = Date()
+   @State private var textTitle = "タイトル"
 
     var body: some View {
-        VStack {
-            DatePicker("日付", selection: $selectionDate)
-            HStack {
-                Text("出国日時: ")
-                Text(selectionDate.description)
+        Text(textTitle).onTapGesture {
+            DispatchQueue.main.async {
+                self.textTitle = "メインスレッド"
             }
-            
         }
+        
     }
 }
 
