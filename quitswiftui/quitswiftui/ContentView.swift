@@ -1,18 +1,29 @@
-// 89日目　UIImage_iOS13用+ImageTap
-// 88日目の正解は「1.0」でした
+// 90日目　UserDefaults
+// 89日目の正解は「次へ」でした
+// 参考URL: https://qiita.com/From_F/items/ee016b603b72f68a7f5e
 
-//問題: Imageをタップすると何が表示されますか？
+//問題: Your nameに「こげぱん」といれるとどうなるのか？
 
 import SwiftUI
 
 struct ContentView: View {
+    @State var inputText:String = ""
+    @State var displayText:String = ""
+
     var body: some View {
-        Image(systemName: "pencil").resizable()
-            .frame(width: 100, height: 100, alignment: .center)
-            .padding()
-            .border(Color.red, width: 2)
-            .onTapGesture {
-                print("次へ")
+        VStack {
+            Text("Hello, \(self.displayText)!")
+            TextField("Your name", text: $inputText , onCommit: {
+                UserDefaults.standard.set(self.inputText, forKey: "name")
+                self.displayText = self.inputText
+                self.inputText = ""
+                })
+                .padding()
+        }
+        .onAppear {
+            self.displayText = "World"
+            guard let userdefaultText = UserDefaults.standard.value(forKey: "name") as? String else { return }
+            self.displayText = userdefaultText
         }
     }
 }
