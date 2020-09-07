@@ -1,8 +1,7 @@
-// 92日目　メインスレッド対応
-// 91日目の正解は「2020-10-08」でした
-// 参考URL: https://capibara1969.com/2195/
+// 93日目　遅延処理
+// 92日目の正解は「メインスレッド」でした
 
-//問題: タイトルをタップすると、何が表示されるでしょうか？
+//問題: タイトルを押してから、3秒後何が表示されるでしょうか・
 
 import SwiftUI
 
@@ -11,9 +10,16 @@ struct ContentView: View {
 
     var body: some View {
         Text(textTitle).onTapGesture {
-            DispatchQueue.main.async {
-                self.textTitle = "メインスレッド"
+            var privateTextTitle = ""
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
+                self.textTitle = privateTextTitle
             }
+            
+            privateTextTitle += "1秒"
+            privateTextTitle += "2秒"
+            privateTextTitle += "3秒"
+            privateTextTitle += "4秒"
+            privateTextTitle += "5秒"
         }
         
     }
