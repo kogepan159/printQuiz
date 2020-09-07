@@ -1,33 +1,21 @@
-// 93日目　遅延処理
-// 92日目の正解は「メインスレッド」でした
+// 94日目　多言語対応
+// 93日目の正解は「1秒2秒3秒4秒5秒」でした
 
-//問題: タイトルを押してから、3秒後何が表示されるでしょうか・
+//問題: 日本語端末でbuildした場合に何が表示されますか？
 
 import SwiftUI
 
 struct ContentView: View {
-   @State private var textTitle = "タイトル"
 
     var body: some View {
-        Text(textTitle).onTapGesture {
-            var privateTextTitle = ""
-            DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
-                self.textTitle = privateTextTitle
-            }
-            
-            privateTextTitle += "1秒"
-            privateTextTitle += "2秒"
-            privateTextTitle += "3秒"
-            privateTextTitle += "4秒"
-            privateTextTitle += "5秒"
-        }
-        
+        Text("text") // Localizable.stringから参照
+        //Text(verbatim: "test")そのまま表示させたい場合
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView().environment(\.locale, .init(identifier: "ja"))
     }
 }
 
