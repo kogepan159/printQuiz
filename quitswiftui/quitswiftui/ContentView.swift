@@ -1,8 +1,8 @@
-// 98日目 API取得
-// 97日目の正解は「戻る」でした
+// 99日目 API表示
+// 98日目の正解は「１５個」でした
 // 参考URL: https://qiita.com/maoyama/items/fd9e82cd91abd3256631
 
-// 問題: APIで取得できるリポジトリの数は？？
+// 問題: APIを取得したLIST表示したときに、一番上に何が出てくるでしょうか？
 
 import SwiftUI
 import Foundation
@@ -36,12 +36,12 @@ struct ContentView: View {
 
     var body: some View {
         List(store.repositories) { (repository) in
-            UserRow(repository: repository)
+            RepositoryRow(repository: repository)
         }
     }
 }
 
-struct UserRow: View {
+struct RepositoryRow: View {
     var repository: Repository
 
     var body: some View {
