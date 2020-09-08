@@ -1,27 +1,56 @@
-// 97日目　画面遷移
-// 96日目の正解は「ごまたまご」でした
-// 参考URL: https://qiita.com/hcrane/items/eb847ca7fb7a0b9e8073
+// 98日目 API取得
+// 97日目の正解は「戻る」でした
+// 参考URL: https://qiita.com/maoyama/items/fd9e82cd91abd3256631
 
-// 問題: SubContentView画面の左上にあるものはなに？
+// 問題: APIで取得できるリポジトリの数は？？
 
 import SwiftUI
+import Foundation
+import Combine
+
+class FollowingUserStore: ObservableObject {
+    @Published var repositories: [Repository] = []
+
+    init() {
+        load()
+    }
+
+    func load() {
+        let url = URL(string: "https://api.github.com/users/kogepan159/repos")!
+        URLSession.shared.dataTask(with: url) { data, response, error in
+            DispatchQueue.main.async {
+                self.repositories = try! JSONDecoder().decode([Repository].self, from: data!)
+                print(self.repositories.count)
+            }
+        }.resume()
+    }
+}
+
+struct Repository: Decodable, Identifiable {
+    var id: Int
+    var name: String
+}
 
 struct ContentView: View {
+    @ObservedObject var store = FollowingUserStore()
+
     var body: some View {
-        NavigationView {
-            NavigationLink(destination: SubContentView()) {
-                Text("Show Next")
-            }
+        List(store.repositories) { (repository) in
+            UserRow(repository: repository)
         }
     }
 }
 
-// 遷移先
-struct SubContentView: View {
+struct UserRow: View {
+    var repository: Repository
+
     var body: some View {
-        Text("SubContentView")
+        VStack {
+            Text(repository.name)
+        }
     }
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
