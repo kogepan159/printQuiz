@@ -1,7 +1,7 @@
-// 95日目　hidden対応
-// 94日目の正解は「おはよう」でした
+// 96日目　ダークモード対応対応
+// 95日目の正解は「3つ」でした
 
-//問題: こちらは何個表示されるでしょうか？
+//問題: lightモード時に何が表示されるでしょうか？
 
 import SwiftUI
 
@@ -9,17 +9,20 @@ struct ContentView: View {
 
     var body: some View {
         VStack  {
-            Text("text")
-            Text("text").hidden()
-            Text("text").labelsHidden()
-            Text("text")
+            if (UITraitCollection.current.userInterfaceStyle == .dark) {
+                Text("白い恋人").foregroundColor(Color.black)
+            } else {
+               Text("ごまたまご").foregroundColor(Color.black)
+            }
         }
+
+        
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView().environment(\.locale, .init(identifier: "ja"))
+            ContentView().colorScheme(.dark)
     }
 }
 
