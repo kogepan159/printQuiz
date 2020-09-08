@@ -1,56 +1,43 @@
-// 99日目 API表示
-// 98日目の正解は「１５個」でした
-// 参考URL: https://qiita.com/maoyama/items/fd9e82cd91abd3256631
+// 100日目 100回タップして達成が表示されるアプリ
+// 99日目の正解は「android-changetext」でした
 
-// 問題: APIを取得したLIST表示したときに、一番上に何が出てくるでしょうか？
+// 問題: カウントが100回目に何が表示されますか？
+// ここまでお付き合いいただきありがとうございます！
+// Swift/Storyboard/SwiftUIと多くのことを私も知れました。
+// またどこかでお会いしましょう。
 
 import SwiftUI
-import Foundation
-import Combine
 
-class FollowingUserStore: ObservableObject {
-    @Published var repositories: [Repository] = []
-
-    init() {
-        load()
-    }
-
-    func load() {
-        let url = URL(string: "https://api.github.com/users/kogepan159/repos")!
-        URLSession.shared.dataTask(with: url) { data, response, error in
-            DispatchQueue.main.async {
-                self.repositories = try! JSONDecoder().decode([Repository].self, from: data!)
-                print(self.repositories.count)
-            }
-        }.resume()
-    }
-}
-
-struct Repository: Decodable, Identifiable {
-    var id: Int
-    var name: String
-}
 
 struct ContentView: View {
-    @ObservedObject var store = FollowingUserStore()
-
-    var body: some View {
-        List(store.repositories) { (repository) in
-            RepositoryRow(repository: repository)
-        }
-    }
-}
-
-struct RepositoryRow: View {
-    var repository: Repository
+    @State var count :Int = 90
+    
 
     var body: some View {
         VStack {
-            Text(repository.name)
+            if count > 99 {
+                           Text("100日間ありがとうございました！ ").foregroundColor(.red).font(Font.system(size: 20))
+                       }
+            Text("")
+            HStack {
+                Text("カウント: ")
+                Text(self.count.description)
+            }
+            HStack {
+                Button(action: {self.count += 1} ) {
+                    Text("+")
+                }.padding()
+                Button(action: {self.count -= 1}) {
+                   Text("-")
+                }.padding()
+            }
+            
+           
         }
     }
+    
+   
 }
-
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
