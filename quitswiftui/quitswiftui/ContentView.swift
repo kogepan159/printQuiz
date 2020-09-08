@@ -1,15 +1,19 @@
-// 94日目　多言語対応
-// 93日目の正解は「1秒2秒3秒4秒5秒」でした
+// 95日目　hidden対応
+// 94日目の正解は「おはよう」でした
 
-//問題: 日本語端末でbuildした場合に何が表示されますか？
+//問題: こちらは何個表示されるでしょうか？
 
 import SwiftUI
 
 struct ContentView: View {
 
     var body: some View {
-        Text("text") // Localizable.stringから参照
-        //Text(verbatim: "test")そのまま表示させたい場合
+        VStack  {
+            Text("text")
+            Text("text").hidden()
+            Text("text").labelsHidden()
+            Text("text")
+        }
     }
 }
 
